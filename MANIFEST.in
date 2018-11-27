@@ -1,0 +1,2 @@
+recursive-exclude dlispy/tests *
+include dlispy/logging.ini
