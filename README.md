@@ -2,7 +2,7 @@
 Parser for DLIS-files (Digital Log Interchange Standard), a binary format for Well Log Data, described by [RP66 Version 1](http://w3.energistics.org/rp66/v1/Toc/main.html)
 
 # Scope
-This parser can handle the both the visiable envolope and logical format of RP66 version 1 which means as long as it is a DLIS file end up on a computer/server, this parser should be able to read and parse it. However, it is in a disk tape, this parser will Not be able to parse it.
+This parser can handle the both the visible envolope and logical format of RP66 version 1 which means as long as it is a DLIS file end up on a computer/server, this parser should be able to read and parse it. However, it is in a disk tape, this parser will Not be able to parse it.
 Most of format defined in standard has been coverred, for example
 -   Logical file and multiple logical files in a single DLIS file
 -   EFLR (both public EFLR and private EFLR) and IFLR (FData, EoF and NOFORM IFLR)
@@ -25,7 +25,7 @@ After install it as package, you can transform single DLIS file or a folder whic
     `python -m dlispy.core --input=<path to single dlis file or a folder> --output=<output path> --eflronly=<if True only dump EFPRs, otherwise dump everything>`
     
 ### Output
-When uses this parser to parse some dlis file and generate output, in the specified output directory, you can expect one folder for each logical file from original dlis file. In each logical file folder, following parts are included:
+When this parser is used to parse some dlis file and generate output, in the specified output directory, you can expect one folder for each logical file from original dlis file. In each logical file folder, following parts are included:
 -   A directory named `UnformattedDataLogicalRecords` which includes all the Unformatted Data Logical Records. For each records, there are two part, the binary data file and a json file describes its `CONSUMER-NAME` and `DESCRIPTION`
 -   A json file which represents all the EFLRs in the logical file
 -   A set of CSV files, each represents all the FData for one frame. Note: the value for a channel could be a single integer, a list of integer of float, or a multiple dimension volume.
@@ -61,7 +61,7 @@ for lf  in logical_file_list: # type:LogicalFile
 
 ## How to dump a dlis file to a readable format
 
-In this sample code, you can see How to dump a dlis file to a read format including. Since each dlis file could include one or more logical files,
+In this sample code, you can see how to dump a dlis file to a read format. Since each dlis file could include one or more logical files,
 there is no dependency between logical record cross logical files, so it means treat each logical file seperately, thus we create
 separate folder for each logical file in the given output path, we use `id` of the logical file as folder name. In each folder, there are following content:
 - a json file which includes all EFLRs (public and private oens) in this logical file
@@ -105,7 +105,7 @@ for lf  in logical_file_list: # type:LogicalFile
 # Additional tips:
 ## Compability test for different Python versions:
  -  Install tool: `pip install tox pytest pyenv`
- -  Then make sure you have python 3.5, 3.6 install
+ -  Then make sure you have python 3.5, 3.6 installed
  -  `tox`
 ## Generate coverage report:
 `py.test --cov-report html --cov=dlis_parser  dlis_parser/tests/test_basic.py`
