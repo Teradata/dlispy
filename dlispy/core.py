@@ -19,7 +19,7 @@ def parse(path, eflr_only = False):
     :param path: File path to the DLIS file
 
     :type eflr_only: bool
-    :param eflr_only: If Truem, then only parse EFLR in each logical file.
+    :param eflr_only: If True, then only parse EFLR in each logical file.
 
     :return: a tuple, first element is instance of :class:`.StorageUnitLabel` and second element is a list of :class:`.LogicalFile`.
 
@@ -68,7 +68,7 @@ def parse(path, eflr_only = False):
 
 def dump(df_path, output_path, eflr_only  = False):
     """
-    Dump a given DLIS file. In the "output_path", you will folder a few folder which for one logical file.
+    Dump a given DLIS file. In the "output_path", you will find a folder each for one logical file.
     :type df_path: str
     :param df_path: Path to the dlis file.
 
