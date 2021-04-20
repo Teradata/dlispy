@@ -19,7 +19,7 @@ setuptools.setup(
                       'click==6.7',
                       'more-itertools==4.3.0',
                       'pluggy==0.7.1',
-                      'py==1.5.4',
+                      'py==1.10.0',
                       'pytest==3.7.1',
                       'six==1.11.0'
                      ],
